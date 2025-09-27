@@ -32,4 +32,3 @@ public:
   friend istream& operator>>(istream& istr, TSet& bf);
   friend ostream& operator<<(ostream& ostr, const TSet& bf);
 };
-#endif

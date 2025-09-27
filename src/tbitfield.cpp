@@ -22,7 +22,7 @@ TBitField::TBitField(const TBitField& bf) // конструктор копиро
 
 TBitField::~TBitField()
 {
-  delete[this->BitLen] this->pMem;
+  delete[] this->pMem;
   this->pMem = nullptr;
 }
 
@@ -39,7 +39,7 @@ TELEM TBitField::GetMemMask(const int n) const // битовая маска дл
   if (n > this->BitLen - 1) 
     throw(out_of_range("Index out of range"));
   
-  return pow(2, n % 8);
+  return (1 << (n % NBITS));
 }
 
 // доступ к битам битового поля
@@ -77,7 +77,7 @@ int TBitField::GetBit(const int n) const // получить значение б
 
 TBitField& TBitField::operator=(const TBitField& bf) // присваивание
 {
-  delete[this->BitLen] this->pMem;
+  delete[] this->pMem;
   this->BitLen = bf.BitLen;
   this->MemLen = bf.MemLen;
   this->pMem = new TELEM[this->BitLen];

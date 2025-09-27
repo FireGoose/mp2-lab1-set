@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.29)
 
-set(PROJECT_NAME set)
+set(PROJECT_NAME bitset)
 project(${PROJECT_NAME})
 
 # TODO(Korniakov): not sure if these lines are needed

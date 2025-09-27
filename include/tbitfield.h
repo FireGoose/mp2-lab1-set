@@ -6,6 +6,8 @@ using namespace std;
 
 typedef unsigned int TELEM;
 
+const int NBITS = 8 * sizeof(TELEM);
+
 class TBitField
 {
 private:
@@ -43,5 +45,3 @@ public:
 //   массив pМем рассматривается как последовательность MemLen элементов
 //   биты в эл-тах pМем нумеруются справа налево (от младших к старшим)
 // О8 Л2 П4 С2
-
-#endif
