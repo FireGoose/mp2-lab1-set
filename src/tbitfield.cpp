@@ -75,7 +75,7 @@ int TBitField::GetBit(const int n) const // получить значение б
 
 // битовые операции
 
-TBitField& TBitField::operator=(const TBitField &bf) // присваивание
+TBitField& TBitField::operator=(const TBitField& bf) // присваивание
 {
   delete[this->BitLen] this->pMem;
   this->BitLen = bf.BitLen;
@@ -142,7 +142,7 @@ TBitField TBitField::operator~(void) // отрицание
 
 // ввод/вывод
 
-istream& operator>>(istream &istr, TBitField &bf) // ввод
+istream& operator>>(istream& istr, TBitField& bf) // ввод
 {
     for (size_t i = 0; i < bf.GetLength(); i++) 
     {
@@ -159,7 +159,7 @@ istream& operator>>(istream &istr, TBitField &bf) // ввод
     return istr;
 }
 
-ostream& operator<<(ostream &ostr, const TBitField &bf) // вывод
+ostream& operator<<(ostream& ostr, const TBitField& bf) // вывод
 {
   for (int i = 0; i < bf.GetLength(); i++) 
     ostr << bf.GetBit(i) << ", ";
